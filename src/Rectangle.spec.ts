@@ -40,10 +40,8 @@ describe('Rectangle specs', function () {
       // arrange
       const subject = new Rectangle(0, 0, 100, 100);
       // assert
-      // NOTE that this rectangle definition treats the left/top and right/bottom boundaries differently; e.g.
-      //  the left and top coordinates are considered "inside" while the right and bottom" coordinates are "outside"
-      for (let x = subject.left; x < subject.right; x++) {
-        for (let y = subject.top; y < subject.bottom; y++) {
+      for (let x = subject.left; x <= subject.right; x++) {
+        for (let y = subject.top; y <= subject.bottom; y++) {
           expect(subject.contains(new Vec2(x, y))).toBe(true);
         }
       }

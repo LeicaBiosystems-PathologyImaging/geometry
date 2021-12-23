@@ -115,8 +115,8 @@ export class Rectangle {
     const origin = new Vec2(this.left + this.width / 2, this.top + this.height / 2);
     const newVec2 = p.rotate(origin, -this.radians);
     return newVec2.x >= this.left &&
-      newVec2.x < this.right &&
+      newVec2.x <= this.right &&
       newVec2.y >= this.top &&
-      newVec2.y < this.bottom;
+      newVec2.y <= this.bottom;
   }
 }
